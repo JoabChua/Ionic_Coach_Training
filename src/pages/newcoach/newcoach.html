@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Coach Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onCreate(f)">
+    <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" name="name" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Picture URL</ion-label>
+        <ion-input type="text" name="picURL" ngModel required></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-textarea type="text" name="desc" ngModel required></ion-textarea>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+            <button ion-button block type="submit" [disabled]="!f.valid">Create</button>
+        </ion-col>
+        <ion-col col-6>
+            <button ion-button block type="button" (click)="goBack()">Cancel</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
